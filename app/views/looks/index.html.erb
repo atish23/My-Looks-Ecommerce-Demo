@@ -13,6 +13,10 @@
             <div class="row">
                 <div class="col-md-7">
                     <a href="#">
+                        <% @product = look.product_id %>
+                        <% @product = Product.find_by_id(@product)  %>
+
+                        <%#= image_tag%>
                         <%= image_tag @product.avatar.url(:preview) %>
                     </a>
                 </div>

@@ -29,6 +29,10 @@ class LooksController < ApplicationController
 		@look = Look.find(params[:id])
 	end
 
+	def update
+		
+	end
+
 	def destroy
 		@look = Look.find(params[:id])
 		@look.destroy
@@ -37,6 +41,6 @@ class LooksController < ApplicationController
 
 private
 	def look_params
-		params.require(:look).permit(:name,:neckwear,:shirts,:shoes)
+		params.require(:look).permit(:name,:neckwear,:shirts,:shoes,:product_id)
 	end
 end

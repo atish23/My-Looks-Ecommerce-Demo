@@ -18,7 +18,7 @@
 	  <%= f.label :shoes %><br>
     <%= f.text_field :shoes, class: "form-control" %>
 	  </div>
-	  <%= f.hidden_field :product_id, :value => @product.id%>
+	  <%= f.hidden_field :product_id, :value => @product.id rescue nil%>
 	  <%# binding.pry %>
 	  <%= f.submit 'Submit', class: 'btn btn-default' %>  	
   </div>
