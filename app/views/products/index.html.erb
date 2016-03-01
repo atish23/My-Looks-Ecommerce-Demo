@@ -51,7 +51,7 @@
                               <%= image_tag product.avatar.url(:thumb) %>
                               <div class="caption">
                                   <h4 class="pull-right"><%= product.price %></h4>
-                                  <h4><%= link_to product.name,product_path(product)%>
+                                  <h4><%= link_to product.name.titleize,product_path(product)%>
                                   </h4>
                                   <p><%= product.description %></p>
                               </div>

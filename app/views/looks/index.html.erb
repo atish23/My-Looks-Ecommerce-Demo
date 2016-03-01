@@ -17,14 +17,19 @@
                         <% @product = Product.find_by_id(@product)  %>
 
                         <%#= image_tag%>
-                        <%= image_tag @product.avatar.url(:preview) %>
+                        <%= image_tag @product.avatar.url(:thumb) %>
                     </a>
                 </div>
                 <div class="col-md-5">
                     <h3><%=look.name%></h3>
+                    <% if  %>
                     <%= link_to "Edit",edit_look_path(look),class: "btn btn-primary"%>
+                    <% end  %>
                     <%= link_to "Delete",look_path(look),method: :delete,class: "btn btn-primary"%>
                     <%= link_to "Order",edit_look_path(look),class: "btn btn-primary"%>
+                    <div id ="share" >
+                    <%= link_to "Share", class: 'btn btn-primary'%>
+                  </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -33,3 +38,10 @@
                 <%end%>
         <!-- /.row -->
 </div>
+
+<script type="text/javascript">
+$("#share").click(function(){
+  alert("hello");
+});
+</script>
+

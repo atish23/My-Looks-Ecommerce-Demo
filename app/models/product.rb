@@ -18,4 +18,5 @@ class Product < ActiveRecord::Base
     :presence => true,
     :size => { :in => 0..10.megabytes },
     :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
+    has_many :accessories
 end

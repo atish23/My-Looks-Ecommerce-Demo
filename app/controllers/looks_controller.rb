@@ -30,7 +30,12 @@ class LooksController < ApplicationController
 	end
 
 	def update
-		
+		@look = Look.find(params[:id])
+		if @look.update(look_params)
+			redirect_to looks_path , :notice => "Succesfully updated"
+		else
+			render :edit , :notice => "Sorry"
+		end
 	end
 
 	def destroy
@@ -41,6 +46,6 @@ class LooksController < ApplicationController
 
 private
 	def look_params
-		params.require(:look).permit(:name,:neckwear,:shirts,:shoes,:product_id)
+		params.require(:look).permit(:name,:neckware,:shirts,:shoes,:product_id)
 	end
 end
